@@ -1,0 +1,46 @@
+/* Styles de la barre de navigation */
+
+  
+  /* Styles de la page d'accueil */
+  .container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ecf0f1; /* Fond gris clair */
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 3em;
+    color: #2c3e50; /* Texte sombre pour le contraste */
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1.2em;
+    color: #7f8c8d; /* Gris moyen */
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+  
+  .services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+  
