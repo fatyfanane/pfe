@@ -1,20 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">KARLA TRANS</div>
-      <ul>
-        <li><Link to="/">Accueil</Link></li>
-        <li><Link to="/about">A Propos</Link></li>
-        <li><Link to="/secteursactivite">Secteur d'activité</Link></li>
-        <li><Link to="/logistique">Logistique</Link></li>
-        <li><Link to="/">Nos Frets</Link></li>
-        <li><Link to="/">Transit</Link></li>
-        <li><Link to="#services">Services</Link></li>
-        <li><Link to="#contact">Contact</Link></li>
+      <div className="navbar-logo">
+        <img src="/karla_trans_cover-removebg-preview.png" alt="Karla Trans Logo" />
+        <span className="navbar-title">KARLA TRANS</span>
+      </div>
+      <ul className="nav-links">
+        <li><NavLink to="/" end>Accueil</NavLink></li>
+        <li><NavLink to="/about">À Propos</NavLink></li>
+        <li><NavLink to="/secteursactivite">Secteurs</NavLink></li>
+        <li><NavLink to="/logistique">Logistique</NavLink></li>
+        <li><NavLink to="/frets">Frets</NavLink></li>
+        <li><NavLink to="/transit">Transit</NavLink></li>
+        <li><NavLink to="/services">Services</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
     </nav>
   );

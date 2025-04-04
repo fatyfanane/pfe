@@ -1,63 +1,107 @@
 .logistique-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+}
+
+/* === Header === */
+.logistique-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logistique-header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.logistique-header p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+/* === Services Section === */
+.logistique-services {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.logistique-services h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #2980b9;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 30px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  font-size: 2.5em;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+/* === CTA Section === */
+.logistique-cta {
+  text-align: center;
+  background-color: #2980b9;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.logistique-cta p {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: white;
+  color: #2980b9;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ecf0f1;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  header {
-    text-align: center;
-    margin-bottom: 40px;
+
+  .logistique-header h1 {
+    font-size: 2.2em;
   }
-  
-  header h1 {
-    font-size: 2.5em;
-    color: #333;
+
+  .logistique-cta p {
+    font-size: 1.1em;
   }
-  
-  header p {
-    font-size: 1.2em;
-    color: #777;
-  }
-  
-  .services {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-  
-  .service-item {
-    width: 30%;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-item h3 {
-    font-size: 1.6em;
-    color: #444;
-  }
-  
-  .service-item p {
-    color: #666;
-  }
-  
-  .cta {
-    text-align: center;
-  }
-  
-  .cta button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cta button:hover {
-    background-color: #0056b3;
-  }
-  
+}

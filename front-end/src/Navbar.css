@@ -1,39 +1,72 @@
 .navbar {
-  background-color: #0d3349;
-  color: white;
-  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffffff; /* Fond blanc */
+  padding: 10px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.navbar .logo {
+.navbar-logo {
   display: flex;
   align-items: center;
-}
-.navbar .logo img {
-  width: 150px; /* Ajuste la taille selon ton besoin */
-  height: auto;
+  gap: 10px;
 }
 
-.navbar ul {
+.navbar-logo img {
+  height: 55px; /* ✅ Ajuste ici la taille du logo */
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #002b49; /* Rouge pour le mot "TRANS" si souhaité */
+}
+
+.nav-links {
   list-style: none;
+  display: flex;
+  gap: 20px;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
-.navbar ul li {
-  margin-left: 20px;
-}
-
-.navbar ul li a {
+.nav-links li a {
+  color: #002b49; /* Texte bleu foncé sur fond blanc */
   text-decoration: none;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding: 5px 0;
 }
 
-.navbar ul li a:hover {
-  color: #f15a0f;
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .navbar-logo {
+    margin-bottom: 10px;
+  }
 }

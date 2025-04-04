@@ -1,204 +1,123 @@
-/* Global */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
-  margin: 0;
-  padding: 0;
+.secteurs-page {
+  padding: 40px 20px;
+  background-color: #f4f7fa;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Secteurs Container */
-.secteurs-container {
-  display: flex;
-  padding: 20px;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 25%;
-  background: white;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.sidebar h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #002b49;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 8px 0;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #002b49;
-  font-weight: bold;
-}
-
-.sidebar ul li a:hover {
-  color: #f1c40f;
-}
-
-/* Content */
-.content {
-  width: 75%;
-  padding: 20px;
+.secteurs-header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.content h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.secteurs-header h1 {
+  font-size: 2.8em;
   color: #002b49;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* Card */
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card .icon {
-  font-size: 40px;
-  color: #002b49;
-  margin-bottom: 10px;
-}
-
-.card h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #002b49;
-}
-
-.card .image {
-  margin-top: 20px;
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Animation de clignotement */
-@keyframes blink-animation {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-
-.blink {
-  animation: blink-animation 0.5s ease-in-out 2;
-}
-
-/* Section Contacter un Expert */
-.contact-expert,
-.demande-devis {
-  text-align: center;
-  margin: 40px auto;
-  padding: 30px;
-  background: white;
-  width: 80%;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contact-expert h2,
-.demande-devis h2 {
-  color: #002b49;
-}
-
-.contact-expert p,
-.demande-devis p {
+.secteurs-header p {
+  font-size: 1.2em;
   color: #666;
-  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-.btn-contact,
-.btn-devis {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #002b49;
-  color: white;
-  text-decoration: none;
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter-buttons button {
+  background-color: white;
+  border: 2px solid #002b49;
+  color: #002b49;
   font-weight: bold;
-  border-radius: 5px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.btn-contact:hover,
-.btn-devis:hover {
-  background-color: #f1c40f;
-  color: #002b49;
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background-color: #002b49;
+  color: white;
 }
 
-/* Modal */
+.secteurs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.secteur-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.secteur-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.secteur-card .icon {
+  font-size: 2.5em;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .modal-content {
   background: white;
-  padding: 20px;
-  width: 50%;
+  padding: 30px;
+  width: 90%;
   max-width: 500px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
   position: relative;
+  animation: fadeIn 0.3s ease;
+  text-align: center;
 }
 
 .modal-image {
   width: 100%;
-  max-height: 250px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
   color: red;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }

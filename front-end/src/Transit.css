@@ -1,0 +1,44 @@
+.transit-page {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9fafc;
+    padding: 40px 20px;
+    color: #2c3e50;
+  }
+  
+  .transit-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .transit-header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #002b49;
+  }
+  
+  .transit-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .transit-card {
+    background-color: white;
+    padding: 30px;
+    width: 280px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .transit-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .transit-icon {
+    font-size: 2.8em;
+    color: #3498db;
+    margin-bottom: 15px;
+  }
