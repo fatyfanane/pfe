@@ -1,33 +1,39 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
 
 const app = express();
 
-// Middlewares
+// 🔧 Middlewares
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-// Import correct des routes
-const shipmentRoutes = require('./routes/shipments.routes');
-const userRoutes = require('./routes/users.routes');
+// 🔌 Connexion à MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('✅ Connexion MongoDB réussie'))
+.catch((err) => console.error('❌ Erreur de connexion MongoDB :', err));
 
-// Vérifie ici que les routes sont bien des fonctions
-console.log(typeof shipmentRoutes); // Devrait afficher "function"
-console.log(typeof userRoutes); // Devrait afficher "function"
+// 📦 Import des routes
+const authRoutes = require('./routes/authRoutes');   // Authentification
+const userRoutes = require('./routes/users.routes');  // Utilisateurs
 
-// Utilisation des routes
-app.use('/api/shipments', shipmentRoutes);
-app.use('/api/users', userRoutes);
+// 🚏 Enregistrement des routes
+app.use('/api/auth', authRoutes);     // /api/auth/register, /api/auth/login
+app.use('/api/users', userRoutes);    // /api/users, /api/users/:id/role
+
+// 🧪 Route test
 app.get('/', (req, res) => {
-    res.send('Bienvenue sur l’API de Karla Trans 🚛');
+  res.send('Bienvenue sur l’API Karla Trans 🚛');
 });
 
-
-// Lancer le serveur
+// 🚀 Démarrage du serveur
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
 });

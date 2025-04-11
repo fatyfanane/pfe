@@ -1,3 +1,4 @@
+/* HERO SLIDER */
 .hero-slider {
   position: relative;
   height: 100vh;
@@ -26,27 +27,29 @@
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  width: 100%;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
   text-align: center;
+  z-index: 2;
 }
 
 .hero-title {
   font-size: 3em;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .hero-subtitle {
   font-size: 1.3em;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 .cta-button {
@@ -63,9 +66,6 @@
 .cta-button:hover {
   background-color: #d4ac0d;
 }
-
-/* Services section stays unchanged */
-
 
 /* SERVICES SECTION */
 .services-section {
@@ -117,10 +117,27 @@
   font-size: 1em;
 }
 
-/* Responsive */
+.card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2980b9;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: #e74c3c;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2em;
+  }
+
+  .hero-subtitle {
+    font-size: 1em;
   }
 
   .cta-button {
@@ -130,5 +147,9 @@
   .services {
     flex-direction: column;
     align-items: center;
+  }
+
+  .card {
+    width: 90%;
   }
 }

@@ -29,18 +29,25 @@ const Footer = () => {
 
         {/* Bloc Réseaux Sociaux */}
         <div className="footer-section">
-          <h3>Suivez-nous</h3>
-          <div className="social-icons">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaTwitter /></a>
-          </div>
-        </div>
+  <h3>Suivez-nous</h3>
+  <div className="social-icons">
+    <a href="https://www.facebook.com/p/Karlatrans-100063962260739/" target="_blank" rel="noopener noreferrer">
+      <FaFacebookF />
+    </a>
+    <a href="https://ma.linkedin.com/in/karla-trans-0749241a2" target="_blank" rel="noopener noreferrer">
+      <FaLinkedinIn />
+    </a>
+    <a href="https://x.com/trans_karla/status/1347153033977876480" target="_blank" rel="noopener noreferrer">
+      <FaTwitter />
+    </a>
+  </div>
+</div>
+
       </div>
 
       {/* Bas de page */}
       <div className="footer-bottom">
-        &copy; 2025 Karla Trans – Tous droits réservés.
+        &copy; 2025 KARLA TRANS – Tous droits réservés.
       </div>
     </footer>
   );

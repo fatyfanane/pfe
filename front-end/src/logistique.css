@@ -1,107 +1,244 @@
-.logistique-container {
-  font-family: 'Segoe UI', sans-serif;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
+/* Styles généraux */
+.logistique-page {
+  font-family: 'Arial', sans-serif;
   color: #2c3e50;
+  line-height: 1.6;
 }
 
-/* === Header === */
-.logistique-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.logistique-header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-.logistique-header p {
-  font-size: 1.2em;
-  color: #7f8c8d;
-}
-
-/* === Services Section === */
-.logistique-services {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.logistique-services h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #2980b9;
-}
-
-.service-grid {
+/* HERO SECTION */
+.logistique-heroo {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("https://www.bmt.org/media/6668/commercial-maritime.jpg?anchor=center&mode=crop&width=1920&height=800&rnd=133344136260000000");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 30px;
-}
-
-.service-card {
-  background-color: white;
-  padding: 30px;
-  width: 280px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.service-icon {
-  font-size: 2.5em;
-  color: #3498db;
-  margin-bottom: 15px;
-}
-
-/* === CTA Section === */
-.logistique-cta {
-  text-align: center;
-  background-color: #2980b9;
   color: white;
-  padding: 40px 20px;
-  border-radius: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.logistique-cta p {
-  font-size: 1.3em;
+.heroo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.heroo-container {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-logo-large {
+  width: 150px;
   margin-bottom: 20px;
 }
 
-.cta-button {
-  background-color: white;
-  color: #2980b9;
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.heroo-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #f04e30;
+  color: white;
   border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.heroo-button:hover {
+  background-color: #d43b1f;
+}
+
+/* DESCRIPTION */
+.logistique-description {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.logistique-description h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.logistique-description p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* SERVICES */
+.logistique-services {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.logistique-services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service {
+  background: white;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+}
+
+.service .icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #f04e30;
+}
+
+.service h3 {
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.logistique-cta {
+  background-color: #2c3e50;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* FORMULAIRE */
+.logistique-form {
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+}
+
+.form-wrapper {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-content {
+  flex: 1;
+  padding: 30px;
+  background-color: white;
+}
+
+.form-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.form-content p {
+  margin-bottom: 20px;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quote-form input,
+.quote-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.quote-form button {
+  padding: 10px;
+  background-color: #f04e30;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #ecf0f1;
+.quote-form button:hover {
+  background-color: #d43b1f;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  .service-grid {
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .form-wrapper {
+    flex-direction: column;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-logo-large {
+    width: 120px;
+  }
+
+  .services {
     flex-direction: column;
     align-items: center;
   }
 
-  .logistique-header h1 {
-    font-size: 2.2em;
+  .service {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
   }
 
-  .logistique-cta p {
-    font-size: 1.1em;
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .heroo-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

@@ -1,0 +1,324 @@
+/* ✅ Dashboard.css - version avec sidebar masquée par défaut sauf sur mobile */
+
+.admin-dashboard-wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background: linear-gradient(to bottom, #01579b, #0288d1);
+    color: white;
+    padding: 30px 20px;
+    min-height: 100vh;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 1500;
+    transition: left 0.4s ease-in-out;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+  }
+  
+  .sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 10px;
+  }
+  
+  .hamburger-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+    background: #0288d1;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .dashboard {
+    margin-left: 0;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #f2f9ff, #e6f7ff);
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    text-align: center;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar.open ~ .dashboard {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 33, 0.4);
+    z-index: 1000;
+    animation: fadeInOverlay 0.3s ease;
+  }
+  
+  @keyframes fadeInOverlay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .sidebar {
+      left: -250px;
+    }
+  
+    .sidebar.open {
+      left: 0;
+    }
+  
+    .hamburger-btn {
+      display: block;
+    }
+  
+    .dashboard {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .sidebar.open ~ .dashboard {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+    }
+  }
+  
+  /* Reste du CSS inchangé : stats, cards, table, etc. */
+  /* ... */
+  .dashboard-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px auto;
+  }
+  
+  .stat-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    min-width: 220px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    background: #d4efff;
+    transform: scale(1.05);
+  }
+  
+  .stat-card h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+    color: #0277bd;
+  }
+  
+  .stat-card p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #01579b;
+  }
+  
+  .recharts-wrapper {
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
+  }
+  
+  .user-list-section {
+    margin-top: 60px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .user-list-section h3 {
+    font-size: 26px;
+    color: #1565c0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 16px 22px;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  .user-table thead {
+    background-color: #e3f2fd;
+    color: #01579b;
+    font-weight: 600;
+  }
+  
+  .user-table tbody tr:nth-child(even) {
+    background-color: #f1f8ff;
+  }
+  
+  .user-table tbody tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .export-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .export-buttons button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .export-buttons button:hover {
+    background-color: #01579b;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
+  }
+  
+  .card {
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    border-radius: 20px;
+    padding: 30px 26px;
+    width: 280px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    background-color: #e1f5fe;
+  }
+  
+  .card h3 {
+    color: #01579b;
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+  
+  .card p {
+    color: #555;
+    font-size: 15px;
+  }
+  
+  .search-input {
+    padding: 12px 16px;
+    margin-bottom: 25px;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #0288d1;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(2, 136, 209, 0.2);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .user-list-section, .user-list-section * {
+      visibility: visible;
+    }
+    .user-list-section {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    .export-buttons, .search-input, .clear-filter-btn {
+      display: none !important;
+    }
+  }

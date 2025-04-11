@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaShip, FaBoxes, FaAnchor } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import "./Home.css";
 
 const backgroundImages = [
@@ -25,10 +26,16 @@ const Home = () => {
           <div
             key={i}
             className={`hero-slide ${i === index ? "active" : ""}`}
-            style={{ backgroundImage: `url(${img}) `}}
+            style={{ backgroundImage: `url(${img})` }}
           >
             <div className="hero-overlay">
+              
               <h1 className="hero-title">KARLA TRANS</h1>
+              <img
+            src="/logokarla.png"
+            alt="Karla Trans Logo"
+            className="hero-logo-large"
+          />
               <p className="hero-subtitle">Votre partenaire logistique maritime de confiance</p>
               <a href="#services" className="cta-button">Explorer nos services</a>
             </div>
@@ -44,11 +51,13 @@ const Home = () => {
             <FaShip className="icon" />
             <h3>Transport Maritime</h3>
             <p>Expédition rapide, fiable et internationale par voie maritime.</p>
+            <NavLink to="/transport-maritime" className="card-link">En savoir plus</NavLink>
           </div>
           <div className="card">
             <FaBoxes className="icon" />
             <h3>Logistique</h3>
             <p>Suivi complet de vos flux de marchandises et entreposage optimisé.</p>
+            <NavLink to="/logistique" className="card-link">En savoir plus</NavLink>
           </div>
           <div className="card">
             <FaAnchor className="icon" />
