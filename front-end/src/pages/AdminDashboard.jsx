@@ -18,6 +18,24 @@ const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const listRef = useRef(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+  
+    const targets = document.querySelectorAll('.section-title, .card');
+    targets.forEach(el => observer.observe(el));
+  
+    return () => observer.disconnect();
+  }, []);
+  
 
   useEffect(() => {
     const fetchStats = async () => {

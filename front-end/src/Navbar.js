@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { User, LogIn, UserPlus } from 'lucide-react'; // 👈 Import des icônes
+import { User, LogIn, UserPlus } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -8,6 +8,7 @@ const Navbar = () => {
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem('user'));
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef(null);
 
   const handleLogout = () => {
@@ -30,12 +31,24 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <span className="navbar-title">KARLA TRANS</span>
-      </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
+  const shouldBeScrolled = isScrolled || location.pathname !== '/';
+
+  return (
+    <nav className={`navbar ${shouldBeScrolled ? 'scrolled' : 'transparent'}`}>
+       
+    <div className="navbar-title">
+      <h1>KARLA TRANS</h1>
+      <p className="navbar-slogan">TRANSIT-TRANSPORT NATIONAL ET INTERNATIONAL</p>
+    
+  </div>
       <ul className="nav-links">
         <li><NavLink to="/" end>Accueil</NavLink></li>
         <li><NavLink to="/about">À Propos</NavLink></li>
@@ -47,6 +60,7 @@ const Navbar = () => {
           <ul className="dropdown-menu">
             <li><NavLink to="/FretMaritime">Fret Maritime</NavLink></li>
             <li><NavLink to="/FretAerien">Fret Aérien</NavLink></li>
+            <li><NavLink to="/FretRoutier">Fret Routier</NavLink></li>
           </ul>
         </li>
 
@@ -59,13 +73,12 @@ const Navbar = () => {
         {user ? (
           <div className="user-menu">
             <button className="user-toggle" onClick={toggleDropdown}>
-                        <img
-              src={user.avatar || '/default-avatar.png'}
-              alt="avatar"
-              className="navbar-avatar"
-            />
-            <span>{user.name}</span>
-
+              <img
+                src={user.avatar || '/default-avatar.png'}
+                alt="avatar"
+                className="navbar-avatar"
+              />
+              <span>{user.name}</span>
             </button>
             {menuOpen && (
               <ul className="user-dropdown">
@@ -79,7 +92,6 @@ const Navbar = () => {
                 <li onClick={handleLogout}>Déconnexion</li>
               </ul>
             )}
-
           </div>
         ) : (
           location.pathname === '/login' ? (

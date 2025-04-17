@@ -1,0 +1,63 @@
+/* === NAVBAR STYLES === */
+.navbar-blue {
+    background-color: #002b49;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    height: 60px;
+  }
+  
+  .navbar-left a {
+    color: white;
+    margin-right: 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-left a:hover {
+    color: #00aaff;
+  }
+  
+  .navbar-center p {
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-right span {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  /* === PHONE ICON === */
+  .phone-icon {
+    font-size: 18px;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .phone-icon:hover {
+    color: #00aaff;
+  }
+  
+  /* === REMOVE UNDERLINE FROM LINK === */
+  .navbar-right a {
+    text-decoration: none; /* Enlever le soulignement */
+    color: inherit; 
+    /* Garder la couleur du texte */
+  }
+  
+  .navbar-right a:hover {
+    color: #00aaff; /* Ajouter l'effet hover sans souligner */
+  }

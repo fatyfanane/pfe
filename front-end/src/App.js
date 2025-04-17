@@ -20,12 +20,16 @@ import RegisterAsClient from './pages/registerAsClient';
 import Profil from './pages/Profil';
 import UserList from './UserList';
 import Unauthorized from './Unauthorized';
+import Navbarr from './Navbarr';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div>
+        <Navbarr/>
         <Navbar />
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

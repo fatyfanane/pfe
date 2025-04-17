@@ -1,77 +1,166 @@
+/* Footer Styles */
 .footer {
-    background-color: #002b49;
-    color: #fff;
-    padding: 40px 20px 10px;
-    font-family: 'Segoe UI', sans-serif;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 4rem 10% 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+/* Logo and branding section */
+.footer-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-container {
+  margin-bottom: 1.5rem;
+  width: 180px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.footer-logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-slogan h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: var(--white);
+}
+
+.footer-slogan p {
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Links section */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 40px;
+  background-color: var(--secondary-color);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.footer-section a:hover {
+  color: var(--white);
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: all var(--transition-speed);
+}
+
+.social-icons a:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr;
   }
   
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+  .footer-branding {
+    margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-logo-container {
+    justify-content: center;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .footer-section {
-    flex: 1;
-    min-width: 250px;
-  }
-  
-  .footer-section h3 {
-    font-size: 1.3em;
-    margin-bottom: 15px;
-    color: #f1c40f;
-  }
-  
-  .footer-section p,
-  .footer-section li,
-  .footer-section a {
-    color: #ccc;
-    font-size: 0.95em;
-    margin-bottom: 10px;
-    text-decoration: none;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section li a:hover {
-    color: #f1c40f;
-  }
-  
-  .social-icons a {
-    font-size: 1.2em;
-    margin-right: 15px;
-    color: #ccc;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #f1c40f;
-  }
-  
-  .footer-bottom {
     text-align: center;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #aaa;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px;
   }
   
-  /* Responsive */
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .footer-section {
-      margin-bottom: 30px;
-    }
+  .footer-section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}

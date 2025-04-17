@@ -7,7 +7,7 @@
 .transport-hero {
   position: relative;
   height: 100vh;
-  background-image: url("https://www.bmt.org/media/6668/commercial-maritime.jpg?anchor=center&mode=crop&width=1920&height=800&rnd=133344136260000000");
+  background-image: url("https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -300,7 +300,7 @@
       flex-direction: column;
       border-radius: 0;
     }
-  
+    
     .form-image {
       clip-path: none;
       height: 250px;

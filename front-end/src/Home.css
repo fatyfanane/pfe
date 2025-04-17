@@ -1,147 +1,197 @@
-/* HERO SLIDER */
+/********** Hero Section **********/
 .hero-slider {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 0;
+  height: 100vh;
 }
 
-.hero-slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.hero-overlay {
+.hero-overlayy {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  text-align: center;
-  z-index: 2;
+  background: rgba(0, 51, 102, 0.6);
+  z-index: 1;
 }
 
 .hero-title {
   font-size: 3em;
   font-weight: bold;
-  margin-bottom: 20px;
-  color: #fff;
+  color: white;
+  text-align: center;
+  margin-top: 10%;
+  letter-spacing: 2px;
 }
 
 .hero-subtitle {
   font-size: 1.3em;
-  margin-bottom: 30px;
-  color: #fff;
+  color: #d1d1d1;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-quote {
+  font-style: italic;
+  color: #ffffff;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .cta-button {
-  padding: 12px 30px;
-  background-color: #f1c40f;
-  color: #002b49;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
+  background-color: #ffae00;
+  color: #fff;
+  padding: 1rem 2rem;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  border-radius: 30px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin-top: 2rem;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #d4ac0d;
+  background-color: #f46d07;
 }
 
-/* SERVICES SECTION */
+/********** Intro Section **********/
+.intro-text {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f1f6fa;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 800px;
+  margin: auto;
+}
+
+/********** Services Section **********/
 .services-section {
-  padding: 60px 20px;
-  background-color: #f7f9fc;
+  padding: 100px 0;
+  background-color: #f5f7fa;
   text-align: center;
 }
 
+/* Titre de section */
 .section-title {
-  font-size: 2.4em;
-  color: #002b49;
+  font-size: 2.5rem;
+  color: #003366;
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+.section-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cartes container */
 .services {
   display: flex;
+  justify-content: space-around;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
 }
 
+/* Cartes */
 .card {
   background-color: white;
   padding: 30px;
-  border-radius: 12px;
-  width: 280px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  flex: 1 1 300px;
+  transition: transform 0.6s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Quand on scrolle dans la section */
+.card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card.animate:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.card.animate:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.card.animate:nth-child(3) {
+  transition-delay: 0.6s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.icon {
-  font-size: 2.5em;
-  color: #2980b9;
-  margin-bottom: 15px;
+/* Icônes */
+.card .icon {
+  font-size: 3rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
 }
 
+/* Titres des cartes */
 .card h3 {
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1rem;
 }
 
+/* Paragraphes */
 .card p {
+  font-size: 1rem;
   color: #555;
-  font-size: 1em;
+  margin-bottom: 1rem;
 }
 
+/* Liens */
 .card-link {
   display: inline-block;
-  margin-top: 10px;
-  color: #2980b9;
+  margin-top: 12px;
+  color: #003366;
   font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .card-link:hover {
-  color: #e74c3c;
+  text-decoration: underline;
 }
 
-/* RESPONSIVE */
+
+/********** Responsive Design **********/
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2em;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1em;
+    font-size: 1.2rem;
+  }
+
+  .hero-quote {
+    font-size: 1rem;
   }
 
   .cta-button {
-    font-size: 1em;
+    padding: 1rem 1.5rem;
   }
 
   .services {
@@ -153,3 +203,351 @@
     width: 90%;
   }
 }
+
+/* Section À propos Karla Trans */
+.about-karla {
+  background-color: #faf7f4;
+  padding: 50px 20px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.1);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+.about-karla button {
+  margin-top: 20px;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background-color: #003366;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.about-karla button:hover {
+  background-color: #002244;
+}
+
+/* Animation Fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+
+
+.heartbeat-btn {
+  animation: heartbeat 1.5s infinite;
+  
+}
+.stats-section {
+  padding: 100px 0;
+  background-image: url('https://www.geolution.io/wp-content/uploads/2024/11/GEOLUTION-Solutions-de-geolocalisation-pour-la-logistique-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Optionnel : overlay sombre pour meilleure lisibilité du texte */
+.stats-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* ombrage noir semi-transparent */
+  z-index: -1;
+}
+
+/* Pour que tout le contenu reste au-dessus de l'overlay */
+.stats-section * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cercle stats stylé */
+.stat-circle {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 40px 20px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-icon {
+  font-size: 40px;
+  color: #e88f00;
+  margin-bottom: 10px;
+}
+
+
+.testimonials-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.testimonials-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.testimonials-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #e88f00;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card {
+  padding: 20px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  color: #e88f00;
+  margin-bottom: 5px;
+}
+
+.testimonial-role {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-button {
+  background-color: #e88f00;
+  color: #fff;
+  border: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: #ffae00;
+}
+
+.contact-section-advanced {
+  padding: 100px 0;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.contact-card-advanced {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, #ffffff 50%, #e4eaf1 50%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  min-height: 440px;
+  position: relative;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1 1 50%;
+  padding: 40px;
+  z-index: 1;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #003366;
+  background-color: transparent;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.contact-icon {
+  font-size: 22px;
+  color: #e88f00;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .contact-card-advanced {
+    flex-direction: column;
+    background: #ffffff;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1 1 100%;
+    padding: 30px 20px;
+  }
+
+  .contact-right {
+    height: 320px;
+  }
+}
+/* Effet rebond au survol */
+.animated-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-icon:hover {
+  transform: scale(1.3) rotate(-5deg);
+  color: #ff9800;
+}
+
+/* Bouton CTA */
+.cta-button {
+  background-color: #e88f00;
+  color: #d28445;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #cc7c00;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode activable par classe .dark-mode sur body ou container */
+body.dark-mode .contact-section-advanced {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .contact-card-advanced {
+  background: linear-gradient(120deg, #1e1e1e 50%, #2c2c2c 50%);
+}
+
+body.dark-mode .contact-left {
+  color: #f5f5f5;
+}
+
+body.dark-mode .cta-button {
+  background-color: #ff9800;
+  color: #121212;
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #ffa726;
+}
+/* Titre stylisé avec soulignement animé */
+.contact-section-advanced h4 {
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #003366;
+  font-weight: 700;
+}
+
+.contact-section-advanced h4::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background-color: #e88f00;
+  left: 20%;
+  bottom: -10px;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.contact-section-advanced h4:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.contact-section-advanced p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Diminuer la taille de la carte */
