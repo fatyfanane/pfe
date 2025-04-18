@@ -37,3 +37,17 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
 });
+
+const factureRoutes = require('./routes/factureRoutes');
+app.use('/api/factures', factureRoutes);
+
+const demandeRoutes = require('./routes/demandeDevisRoutes');
+app.use('/api/demandes', demandeRoutes);
+
+const expeditionRoutes = require('./routes/expeditionRoutes');
+app.use('/api/expeditions', expeditionRoutes);
+
+const messageRoutes = require('./routes/messageContactRoutes');
+app.use('/api/messages', messageRoutes);
+
+app.use('/api/me', userRoutes); 

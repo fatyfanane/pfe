@@ -6,33 +6,22 @@
  /* CSS pour Transport Maritime - Hero Section */
 .transport-hero {
   position: relative;
-  height: 100vh;
-  background-image: url("https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  height: 90vh;
+  background-image: url("https://www.bmt.org/media/6668/commercial-maritime.jpg?anchor=center&mode=crop&width=1920&height=800&rnd=133344136260000000");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   overflow: hidden;
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  text-align: center;
+  inset: 0;
+  background-color: rgba(0, 43, 73, 0.7);
+  animation: fadeOverlay 3s ease-in-out infinite alternate;
 }
 
 @keyframes fadeOverlay {
@@ -40,14 +29,11 @@
   to { background-color: rgba(0, 43, 73, 0.8); }
 }
 
-
 .hero-container {
   position: relative;
   text-align: center;
   z-index: 2;
   animation: slideUp 1s ease-out;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .hero-logo-large {
@@ -300,7 +286,7 @@
       flex-direction: column;
       border-radius: 0;
     }
-    
+  
     .form-image {
       clip-path: none;
       height: 250px;
@@ -324,3 +310,4 @@
       align-items: center;
     }
   }
+  

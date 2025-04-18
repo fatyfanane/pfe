@@ -143,8 +143,8 @@ const AdminDashboard = () => {
   className="arrow-btn" 
   onClick={() => setSidebarOpen(!sidebarOpen)}
   style={{
-    position: 'absolute',
-    top: '20px',
+    position: 'fixed',
+    top: '150px',
     left: sidebarOpen ? '250px' : '0px',
     backgroundColor: '#0288d1',
     color: 'white',
@@ -158,17 +158,29 @@ const AdminDashboard = () => {
 >
   {sidebarOpen ? <FaArrowLeft size={20} /> : <FaArrowRight size={20} />}
 </button>
-      <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <h3>Statistiques</h3>
-        <ul>
-          <li onClick={() => handleSelectRole(null)}>👥 Total utilisateurs: {totalUsers}</li>
-          <li onClick={() => handleSelectRole("admin")}>🛡 Admins: {adminCount}</li>
-          <li onClick={() => handleSelectRole("client")}>🧑‍💼 Clients: {clientCount}</li>
-        </ul>
-      </aside>
+<aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+  <h3>Statistiques</h3>
+  <ul>
+    <li onClick={() => handleSelectRole(null)}>👥 Total utilisateurs: {totalUsers}</li>
+    <li onClick={() => handleSelectRole("admin")}>🛡️ Admins: {adminCount}</li>
+    <li onClick={() => handleSelectRole("client")}>🧑‍💼 Clients: {clientCount}</li>
+  </ul>
+
+  <h3 style={{ marginTop: '30px' }}>Navigation</h3>
+  <ul>
+    <li onClick={() => navigate('/demande-devis')}>📬 Demandes devis</li>
+    <li onClick={() => navigate('/mes-factures')}>🧾 Factures</li>
+    <li onClick={() => navigate('/mes-expeditions')}>🚚 Créer expédition</li>
+    <li onClick={() => navigate('/liste-expedition')}>📦 Etat expéditions</li>
+    <li onClick={() => navigate('/suivi-expedition')}>📦 Suivi expéditions</li>
+    <li onClick={() => navigate('/admin/demandes')}>📦 Gerer Devis</li>
+    <li onClick={() => navigate('/mes-devis')}>📦 liste des devis</li>
+  </ul>
+</aside>
+
       {sidebarOpen && <div className="overlay" onClick={() => setSidebarOpen(false)}></div>}
       <div className="dashboard">
-        <h2>Tableau de bord Administrateur 🛠</h2>
+        <h2>Tableau de bord Administrateur 🛠️</h2>
         <p>Gérez les utilisateurs, les demandes et les données du système.</p>
         <div className="dashboard-stats">
           <div className="stat-card" onClick={() => setSelectedRole(null)}>
@@ -202,7 +214,7 @@ const AdminDashboard = () => {
             <div className="export-buttons">
               <button onClick={exportPDF}>📄 PDF</button>
               <button onClick={exportExcel}>📊 Excel</button>
-              <button onClick={printTable}>🖨 Imprimer</button>
+              <button onClick={printTable}>🖨️ Imprimer</button>
               <button onClick={() => navigate('/register')}><FaUserPlus style={{ marginRight: 6 }} />Créer un utilisateur</button>
             </div>
             <table className="user-table">

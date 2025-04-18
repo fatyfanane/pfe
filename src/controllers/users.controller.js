@@ -40,9 +40,28 @@ const deleteUser = async (req, res) => {
     res.status(500).json({ error: 'Erreur serveur' });
   }
 };
+const getCurrentUser = async (req, res) => {
+  try {
+    res.status(200).json(req.user); // req.user est injecté par authMiddleware
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+// controllers/userController.js
+exports.getCurrentUser = async (req, res) => {
+  try {
+    res.status(200).json(req.user); // doit être injecté par authMiddleware
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// controllers/userController.js
+
 
 module.exports = {
   getAllUsers,
   updateUserRole,
   deleteUser,
+  getCurrentUser,
 };

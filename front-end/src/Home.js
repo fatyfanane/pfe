@@ -351,7 +351,7 @@ const Home = () => {
     </Box>
     <Box mt={4}>
     <button className="cta-button" onClick={() => window.location.href = "/contact"}>
-      ✉ Nous écrire
+      ✉️ Nous écrire
     </button>
   </Box>
   </Container>

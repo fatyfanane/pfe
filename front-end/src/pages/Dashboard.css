@@ -322,3 +322,11 @@
       display: none !important;
     }
   }
+  .sidebar h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #f3dfda;
+  }
+
+  

@@ -19,17 +19,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await login(formData); 
-      const { name, role, email, avatar } = res.user || res; 
+      const res = await login(formData); // Appel à l'API de connexion
+      const { name, role, email, avatar } = res.user || res; // Récupère l'email, le nom, et autres infos
 
-     
+      // Stocke dans localStorage les informations de l'utilisateur
       localStorage.setItem('user', JSON.stringify({ name, role, email, avatar }));
 
-      
+      // Redirection selon le rôle
       if (role === "admin") {
-        navigate("/admin");
+        navigate("/");
       } else {
-        navigate("/client");
+        navigate("/");
       }
     } catch (err) {
       console.error(err);

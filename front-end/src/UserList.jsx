@@ -33,7 +33,7 @@ const UserList = () => {
 
   const handleRoleChange = async (id, newRole) => {
     try {
-      await axios.put(`http://localhost:5000/api/users/${id}/role, { role: newRole }`);
+      await axios.put(`http://localhost:5000/api/users/${id}/role`, { role: newRole });
       fetchUsers();
     } catch (err) {
       console.error("Erreur lors du changement de rôle :", err);
